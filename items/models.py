@@ -29,8 +29,14 @@ class Item(models.Model):
         User, through="Purchase", related_name="purchased_items"
     )
 
+    class Meta:
+        ordering = ("title",)
+
     def __str__(self) -> str:
-        return self.title
+        return f"{self.title} | {self.category} | ${self.price}"
+
+    def discounted_price(self):
+        return self.price - self.price * self.discount
 
 
 class Purchase(models.Model):
