@@ -19,6 +19,8 @@ class Item(models.Model):
     price = models.FloatField()
     image = models.ImageField(upload_to="item_images", blank=True, null=True)
     is_sold = models.BooleanField(default=False)
+    is_on_sale = models.BooleanField(default=False)
+    discount = models.FloatField(default=0.0)
     created_at = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="items"
