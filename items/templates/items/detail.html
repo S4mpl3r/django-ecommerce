@@ -23,7 +23,9 @@
                 {% endif %}
                 </p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                {% if user.is_authenticated %}
                 <a href="#" class="btn btn-outline-dark fs-5">Add to cart</a>
+                {% endif %}
             </div>
         </div>
         </div>
