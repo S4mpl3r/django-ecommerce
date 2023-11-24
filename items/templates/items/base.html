@@ -41,6 +41,7 @@
                             </ul>
                         </li>
                     </ul>
+                    {% if user.is_authenticated %}
                     <form class="d-flex">
                         <button class="btn btn-outline-light" type="submit">
                             <i class="bi-cart-fill me-1"></i>
@@ -48,6 +49,22 @@
                             <span class="badge bg-light text-dark ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+                    <div class="nav-item text-light mb-2 mb-lg-0 ms-lg-4">
+                        @{{user.username}} 
+                    </div>
+                    <div class="nav-item text-light mb-2 mb-lg-0 ms-lg-4">
+                        <a class="btn btn-danger" href="{% url "logout" %}">Logout</a>
+                    </div>
+                    {% else %}
+                    <div class="d-flex">
+                    </div>
+                    <div class="nav-item text-light mb-2 mb-lg-0 ms-lg-4">
+                        <a class="btn btn-warning" href="{% url "login" %}">Login</a>
+                    </div>
+                    <div class="nav-item text-light mb-2 mb-lg-0 ms-lg-4">
+                        <a class="btn btn-info" href="{% url "register" %}">Register</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </nav>
