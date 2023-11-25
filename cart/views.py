@@ -3,8 +3,6 @@ from django.shortcuts import redirect, render
 
 from items.models import Item
 
-from .models import CartItem
-
 
 @login_required(login_url="login")
 def add_to_cart(request, item_id):

@@ -49,8 +49,8 @@
                             {% comment %} <span class="badge bg-light text-dark ms-1 rounded-pill">0</span> {% endcomment %}
                         </a>
                     </div>
-                    <div class="nav-item text-light mb-2 mb-lg-0 ms-lg-4">
-                        @{{user.username}} 
+                    <div class="nav-item mb-2 mb-lg-0 ms-lg-4">
+                        <a class="btn btn-outline-info" href="{% url "user_profile:user_profile" %}">@{{user.username}}</a>
                     </div>
                     <div class="nav-item text-light mb-2 mb-lg-0 ms-lg-4">
                         <a class="btn btn-danger" href="{% url "logout" %}">Logout</a>
