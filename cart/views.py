@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
-from items.models import Item
+from items.models import Item, PurchaseReceipt
 
 
 @login_required(login_url="login")
@@ -44,3 +44,21 @@ def cart(request):
             "sum": summ,
         },
     )
+
+
+@login_required(login_url="login")
+def purchase(request):
+    if len(request.session["cart_items"]) <= 0:
+        return redirect("cart:cart")
+    else:
+        receipt = PurchaseReceipt(buyer=request.user)
+        receipt.save()
+        total = 0
+        for item_id in request.session["cart_items"]:
+            item = Item.objects.get(pk=item_id)
+            receipt.items.add(item)
+            total += item.discounted_price()
+        receipt.total = total
+        receipt.save()
+        request.session.pop("cart_items")
+        return redirect("cart:cart")

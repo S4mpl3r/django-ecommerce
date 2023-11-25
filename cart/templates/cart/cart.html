@@ -37,7 +37,7 @@
     {% if cart_items %}
     <div class="card border-light my-3 text-center">
         <p class="fs-5"><strong>Total: ${{ sum }}</strong></p>
-        <a href="#" class="btn btn-outline-dark fs-5 card-body">Buy</a>
+        <a href="{% url "cart:purchase" %}" class="btn btn-outline-dark fs-5 card-body">Buy</a>
     </div>
     {% endif %}
 </div>
