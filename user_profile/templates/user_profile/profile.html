@@ -17,7 +17,14 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
 {% endblock stylesheets %}
 
 {% block content %}
-<section class="vh-100" style="background-color: #f4f5f7;">
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5">
+      <div class="text-center text-white">
+          <h1 class="display-6">Profile</h1>
+      </div>
+  </div>
+</header>
+<section class="" style="background-color: #f4f5f7;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-6 mb-4 mb-lg-0">
@@ -29,7 +36,7 @@ background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 1
                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
               <h5>@{{ user.username }}</h5>
               <p>A wise customer</p>
-              <a href="#" class="btn btn-secondary">View Purchases</a>
+              <a href="{% url "user_profile:purchases" %}" class="btn btn-secondary">View Purchases</a>
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">

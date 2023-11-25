@@ -61,4 +61,4 @@ def purchase(request):
         receipt.total = total
         receipt.save()
         request.session.pop("cart_items")
-        return redirect("cart:cart")
+        return redirect("user_profile:purchases")

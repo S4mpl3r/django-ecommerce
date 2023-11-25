@@ -4,7 +4,7 @@
 <header class="bg-dark py-5">
     <div class="container px-4 px-lg-5">
         <div class="text-center text-white">
-            <h1 class="display-6 fw-bolder">My Cart</h1>
+            <h1 class="display-6">My Cart</h1>
         </div>
     </div>
 </header>
@@ -41,11 +41,4 @@
     </div>
     {% endif %}
 </div>
-<ul>
-    {% for entry in cart_items %}
-    <li>
-        {{ entry }}
-    </li>
-    {% endfor %}
-</ul>
 {% endblock content %}

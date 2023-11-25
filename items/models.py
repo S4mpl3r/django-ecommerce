@@ -44,3 +44,6 @@ class PurchaseReceipt(models.Model):
 
     def __str__(self) -> str:
         return f"{self.buyer.username} | {self.total} | {self.date}"
+
+    def receipt_items(self):
+        return list(self.items.all())
