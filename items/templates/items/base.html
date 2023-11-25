@@ -42,13 +42,13 @@
                         </li>
                     </ul>
                     {% if user.is_authenticated %}
-                    <form class="d-flex">
-                        <button class="btn btn-outline-light" type="submit">
+                    <div class="d-flex">
+                        <a href="{% url "cart:cart" %}" class="btn btn-outline-light">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-light text-dark ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
+                            {% comment %} <span class="badge bg-light text-dark ms-1 rounded-pill">0</span> {% endcomment %}
+                        </a>
+                    </div>
                     <div class="nav-item text-light mb-2 mb-lg-0 ms-lg-4">
                         @{{user.username}} 
                     </div>

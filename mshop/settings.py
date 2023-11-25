@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap4",
     "items.apps.ItemsConfig",
     "core.apps.CoreConfig",
+    "cart.apps.CartConfig",
 ]
 
 MIDDLEWARE = [
